@@ -3,8 +3,24 @@ extends layout
 block content
   .container
      .row
-       form.form-horizontal(method="post", action="/admin/movie/new")
+       form.form-horizontal(method="post", action="/news/admin/")
          .form-group
-           label.col-sm-3.control-label(for="inputTitle") 名词
+           label.col-sm-3.control-label(for="inputTitle") 问题
            .col-sm-10
-             input #inputTitle.form-control(type="text", name="movie[title]")
+             input #inputTitle.form-control(type="text", name="news[question]")
+         .form-group
+           label.col-sm-3.control-label(for="inputTitle") 类型
+           .col-sm-10
+             input #inputTitle.form-control(type="text", name="news[type_name]")
+         .form-group
+           label.col-sm-3.control-label(for="inputTitle") 回答图片
+           .col-sm-10
+             input #inputTitle.form-control(type="text", name="news[answer_pic]")
+         .form-group
+           label.col-sm-3.control-label(for="inputTitle") 回答描述
+           .col-sm-10
+             input #inputTitle.form-control(type="text", name="news[answer_info]")
+         .form-group
+           label.col-sm-3.control-label(for="inputTitle") 回答方案
+           .col-sm-10
+             input #inputTitle.form-control(type="text", name="news[answer_solution]")
