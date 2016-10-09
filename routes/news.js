@@ -29,7 +29,7 @@ router.get('/:id', function(req, res, next) {
 
 	News.findById(id,function(err,news){
 		res.render('detail',{
-				title:news.question,
+				title:'new detail',
 				news:news
 		})
 	})
