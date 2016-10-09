@@ -19,7 +19,7 @@ var NewsSchema = new mongoose.Schema({
 })
 
 
-MovieSchema.pre('save',function(next){
+NewsSchema.pre('save',function(next){
 	if(this.isNew){
 		this.meta.createAt = this.meta.updateAt=Date.now();
 	}else{
@@ -30,7 +30,7 @@ MovieSchema.pre('save',function(next){
 })
 
 
-MovieSchema.statics = {
+NewsSchema.statics = {
 	fetch:function(cb){
 		return this
 			.find({})
