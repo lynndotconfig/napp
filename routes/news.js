@@ -25,7 +25,7 @@ router.post('/', function(req, res, next){
 
 /* admin news */
 
-router.get('/news/admin', function(req, res, next) {
+router.get('/admin', function(req, res, next) {
   // res.send('welcome to news.');
   res.render('admin', {
   	title: 'news 录入页',
