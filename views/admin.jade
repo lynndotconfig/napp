@@ -4,6 +4,7 @@ block content
   .container
      .row
        form.form-horizontal(method="post", action="/news/admin/")
+          input(type="hidden",name="movie[_id]",value="#{movie._id}")
          .form-group
            label.col-sm-3.control-label(for="inputTitle") 问题
            .col-sm-10
