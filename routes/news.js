@@ -23,17 +23,7 @@ router.post('/', function(req, res, next){
 	res.send('post sucess.');
 });
 
-/* GET news detail. */
-router.get('/:id', function(req, res, next) {
-	var id = req.params.id
-
-	News.findById(id,function(err,news){
-		res.render('detail',{
-				title:'new detail',
-				news:news
-		})
-	})
-});
+/* admin news */
 
 router.get('/news/admin', function(req, res, next) {
   // res.send('welcome to news.');
@@ -49,5 +39,16 @@ router.get('/news/admin', function(req, res, next) {
   });
 });
 
+/* GET news detail. */
+router.get('/:id', function(req, res, next) {
+	var id = req.params.id
+
+	News.findById(id,function(err,news){
+		res.render('detail',{
+				title:'new detail',
+				news:news
+		})
+	})
+});
 
 module.exports = router;
