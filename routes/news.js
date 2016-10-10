@@ -6,7 +6,7 @@ var News = require('../models/news')
 mongoose.connect('mongodb://localhost/news')
 
 /* GET news listing. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
     News.fetch(function(err, news) {
         if(err){
             console.log(err);
@@ -19,13 +19,13 @@ router.get('/', function(req, res, next) {
     })
 });
 
-router.post('/', function(req, res, next){
+router.post('/', function(req, res){
     res.send('post sucess.');
 });
 
 /* admin news */
 
-router.get('/admin', function(req, res, next) {
+router.get('/admin', function(req, res) {
   // res.send('welcome to news.');
   res.render('admin', {
     title: 'news 录入页',
@@ -81,7 +81,7 @@ router.post('/admin', function(req, res) {
 })
 
 /* GET news detail. */
-router.get('/:id', function(req, res, next) {
+router.get('/:id', function(req, res) {
     var id = req.params.id
 
     News.findById(id,function(err,news){
