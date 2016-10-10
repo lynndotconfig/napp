@@ -3,13 +3,15 @@ extends layout
 block content
   .container
      .row
-       .col-md-7
-        embed(src="#{movie.flash}", allowFullScreen="true", quality="high", width="720", hight="500", align="middle", type="application/x-shockwave-flash")
-       .col-md-5
-       	dl.dl-horizontal
-       	  dt 电影名字
-       	  dd= movie.title
-       	  dt 导演
-       	  dd = movie.doctor
-       	  dt 年份
-       	  dd = movie.date
+        .col-md-5
+       	  dl.dl-horizontal
+       	    dt 问题
+       	    dd= news.question
+       	    dt 类型
+       	    dd = news.type_name
+       	    dt 图片
+       	    dd = news.answer_pic
+            dt 描述
+            dd = news.answer_info
+            dt 回答
+            dd = news.answer_solution
