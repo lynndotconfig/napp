@@ -39,8 +39,9 @@ router.get('/admin', function(req, res) {
   });
 });
 
-router.post('/admin', function(req, res) {
-  var id = req.body.news._id
+router.post('/create', function(req, res) {
+    var id = req.body.news._id;
+    console.log(req.body.news)
     var newsObj = req.body.news
 
     var _news
