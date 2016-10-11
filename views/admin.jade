@@ -3,28 +3,28 @@ extends layout
 block content
   .container
      .row
-       form.form-horizontal(method="post", action="/news/create/")
+       form.form-horizontal(method="post", action="/news/create")
          input(type="hidden",name="news[_id]",value="#{news._id}")
          .form-group
            label.col-sm-3.control-label(for="inputTitle") 问题
            .col-sm-10
-             input#inputTitle.form-control(type="text", name="news[question]")
+             input#inputTitle.form-control(type="text", name="news[question]", value="#{news.question}")
          .form-group
            label.col-sm-3.control-label(for="inputTitle") 类型
            .col-sm-10
-             input#inputTitle.form-control(type="text", name="news[type_name]")
+             input#inputTitle.form-control(type="text", name="news[type_name]", value="#{news.type_name}")
          .form-group
            label.col-sm-3.control-label(for="inputTitle") 回答图片
            .col-sm-10
-             input#inputTitle.form-control(type="text", name="news[answer_pic]")
+             input#inputTitle.form-control(type="text", name="news[answer_pic]", value="#{news.answer_pic}")
          .form-group
            label.col-sm-3.control-label(for="inputTitle") 回答描述
            .col-sm-10
-             input#inputTitle.form-control(type="text", name="news[answer_info]")
+             input#inputTitle.form-control(type="text", name="news[answer_info]", value="#{news.answer_info}")
          .form-group
            label.col-sm-3.control-label(for="inputTitle") 回答方案
            .col-sm-10
-             input#inputTitle.form-control(type="text", name="news[answer_solution]")
+             input#inputTitle.form-control(type="text", name="news[answer_solution]", value="#{news.answer_solution}")
          .form-group
            .col-sm-offset-2.col-sm-10
              button.btn.btn-default(type="submit") 录入
