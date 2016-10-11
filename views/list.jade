@@ -22,5 +22,4 @@ block content
               td #{moment(item.meta.createAt).format('MM/DD/YYYY')}
               td: a(target="_blank", href="../news/#{item.__id}") 查看
               td: a(target="_blank", href="../news/update/#{item.__id}") 查看
-              td:
-                button.btn.btn-danger.del(type="button", data-id="#{item.__id}")
+              td: button.btn.btn-danger.del(type="button", data-id="#{item.__id}")
