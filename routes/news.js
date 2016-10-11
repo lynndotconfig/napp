@@ -50,6 +50,7 @@ router.post('/create', function(req, res) {
             console.log('parse error: ' + err);}
         var inputFile = files.inputFile[0];
         var uploadedPath = inputFile.path;
+    };
     var newsObj = req.body.news
 
     var _news
