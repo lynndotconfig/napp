@@ -40,45 +40,24 @@ router.get('/admin', function(req, res) {
 });
 
 router.post('/create', function(req, res) {
-    var id = req.body.news._id;
-    console.log(req.body.news)
     var newsObj = req.body.news
 
     var _news
+    _news = new News({
+        type_name:newsObj.type_name,
+        question:newsObj.question,
+        answer_pic:newsObj.answer_pic,
+        answer_info:newsObj.answer_info,
+        answer_solution:newsObj.answer_solution,
+    })
 
-    if(id !=='undefined'){
-        News.findById(id,function(err,news){
+    _news.save(function(err,news){
             if(err){
                 console.log(err)
             }
 
-            _news = _.extend(news,newsObj)
-            _news.save(function(err,news){
-                if(err){
-                    console.log(err)
-                }
-
-                res.redirect('/news/'+_news.id)
-            })
-
+            res.redirect('/news/'+_news.id)
         })
-    }else{
-        _news = new News({
-            type_name:newsObj.type_name,
-            question:newsObj.question,
-            answer_pic:newsObj.answer_pic,
-            answer_info:newsObj.answer_info,
-            answer_solution:newsObj.answer_solution,
-        })
-
-        _news.save(function(err,news){
-                if(err){
-                    console.log(err)
-                }
-
-                res.redirect('/news/'+_news.id)
-            })
-    }
 })
 
 /* GET news detail. */
