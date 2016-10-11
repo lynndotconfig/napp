@@ -47,7 +47,7 @@ router.post('/create', function(req, res) {
     form.parse(req, function (err, fields, files) {
         var filesTmp = JSON.stringify(files.null, 2);
         if (err) {
-            console.log('parse error: ' + err');}
+            console.log('parse error: ' + err);}
         var inputFile = files.inputFile[0];
         var uploadedPath = inputFile.path;
     var newsObj = req.body.news
