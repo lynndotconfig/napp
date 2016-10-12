@@ -45,12 +45,11 @@ router.get('/admin', function(req, res) {
 router.post('/create', function(req, res) {
     var form = new multiparty.Form({uploadDir: './public/images/'});
     form.parse(req, function (err, fields, files) {
-        reqj = JSON.stringify(req, null, 2);
         var filesTmp = JSON.stringify(files, null, 2);
         if (err) {
             console.log('parse error: ' + err);
         } else {
-            console.log('req: ' + reqj);
+            console.log('req: ' + req);
             console.log('parse files: ' + filesTmp);
             console.log('files' + files);
             var inputFile = files.answer_pic[0];
@@ -63,27 +62,27 @@ router.post('/create', function(req, res) {
                     console.log('rename ok');
                 }
             });
-        }
-    });
-    var newsObj = req.body.news
+        };
 
-    var _news
-    _news = new News({
-        type_name:newsObj.type_name,
-        question:newsObj.question,
-        answer_pic:newsObj.answer_pic,
-        answer_info:newsObj.answer_info,
-        answer_solution:newsObj.answer_solution,
-    })
-
-    _news.save(function(err,news){
+        var temp = fields;
+        console.log(temp);
+        var _news;
+        _news = new News({
+                    type_name:temp.type_name,
+                    question:temp.question,
+                    answer_pic:temp.answer_pic,
+                    answer_info:temp.answer_info,
+                    answer_solution:temp.answer_solution,
+                })
+        _news.save(function(err,news){
             if(err){
                 console.log(err)
             }
 
             res.redirect('/news/'+_news.id)
-        })
-})
+        });
+    });
+});
 
 /* GET news detail. */
 router.get('/:id', function(req, res) {
