@@ -47,17 +47,20 @@ router.post('/create', function(req, res) {
     form.parse(req, function (err, fields, files) {
         var filesTmp = JSON.stringify(files, null, 2);
         if (err) {
-            console.log('parse error: ' + err);}
-        var inputFile = files.inputFile[0];
-        var uploadedPath = inputFile.path;
-        var dstPath = './public/images/' + inputFile.originalFilename;
-        fs.rename(uploadedPath, dstPath, function(err) {
-            if (err){
-                console.log('rename error' + err);
-            } else {
-                console.log('rename ok');
-            }
-        });
+            console.log('parse error: ' + err);
+        } else {
+            console.log('parse files: ' + filesTmp);
+            var inputFile = files.inputFile[0];
+            var uploadedPath = inputFile.path;
+            var dstPath = './public/images/' + inputFile.originalFilename;
+            fs.rename(uploadedPath, dstPath, function(err) {
+                if (err){
+                    console.log('rename error' + err);
+                } else {
+                    console.log('rename ok');
+                }
+            });
+        }
     });
     var newsObj = req.body.news
 
