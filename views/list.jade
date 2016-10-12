@@ -25,5 +25,5 @@ block content
               td #{item.answer_solution}
               td #{moment(item.meta.createAt).format('MM/DD/YYYY')}
               td: a(target="_blank", href="../news/#{item._id}") 查看
-              td: a(target="_blank", href="../news/update/#{item._id}") 编辑
+              td: a(target="_blank", href="../news/#{item._id}/update") 编辑
               td: button.btn.btn-danger.del(type="button", data-id="#{item._id}")

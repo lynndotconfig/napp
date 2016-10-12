@@ -95,4 +95,19 @@ router.get('/:id', function(req, res) {
     })
 });
 
+/* update news. */
+
+router.get('/:id/update', function(req, res){
+    var id = req.params.id
+
+    if(id){
+        News.findById(id, function(err, news){
+            res.render('admin', {
+                title: 'news update',
+                news.news
+            })
+        })
+    }
+})
+router.get
 module.exports = router;
