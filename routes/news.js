@@ -62,27 +62,25 @@ router.post('/create', function(req, res) {
                     console.log('rename ok');
                 }
             });
-        };
 
-        var temp = fields;
-        console.log(temp);
-        var _news;
-        _news = new News({
-                    type_name:temp.type_name,
-                    question:temp.question,
-                    answer_pic:temp.answer_pic,
-                    answer_info:temp.answer_info,
-                    answer_solution:temp.answer_solution,
-                })
-        _news.save(function(err,news){
-            if(err){
-                console.log(err)
-            }
-
+            var temp = fields;
+            console.log(temp);
+            var _news;
+            _news = new News({
+                        type_name:temp.type_name,
+                        question:temp.question,
+                        answer_pic:dstPath,
+                        answer_info:temp.answer_info,
+                        answer_solution:temp.answer_solution,
+                    })
+            _news.save(function(err,news){
+                if(err){
+                    console.log(err)
+                }}
             res.redirect('/news/'+_news.id)
+            };
         });
     });
-});
 
 /* GET news detail. */
 router.get('/:id', function(req, res) {
