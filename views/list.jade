@@ -6,20 +6,24 @@ block content
        table.table.table-hover.table-borderer
          thead
            tr
-             th 名成
+             th 问题
+             th 类型
+             th 问题信息
+             th 图片
+             th 解决方案
              th 时间
-             th 详情
-             th 详情
-             th 详情
-             th 详情
-             th 详情
+             th 查看
+             th 编辑
+             td 删除
          tbody
            each item in news
             tr(class="item-id-#{item._id}")
               td #{item.question}
               td #{item.type_name}
               td #{item.answer_info}
+              td #{item.answer_pic}
+              td #{item.answer_solution}
               td #{moment(item.meta.createAt).format('MM/DD/YYYY')}
-              td: a(target="_blank", href="../news/#{item.__id}") 查看
-              td: a(target="_blank", href="../news/update/#{item.__id}") 查看
-              td: button.btn.btn-danger.del(type="button", data-id="#{item.__id}")
+              td: a(target="_blank", href="../news/#{item._id}") 查看
+              td: a(target="_blank", href="../news/update/#{item._id}") 编辑
+              td: button.btn.btn-danger.del(type="button", data-id="#{item._id}")
