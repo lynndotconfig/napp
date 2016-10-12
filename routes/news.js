@@ -76,12 +76,12 @@ router.post('/create', function(req, res) {
             _news.save(function(err,news){
                 if(err){
                     console.log(err)
-                }}
-            res.redirect('/news/'+_news.id)
+                }
             };
+            res.redirect('/news/'+_news.id)
         });
     });
-
+});
 /* GET news detail. */
 router.get('/:id', function(req, res) {
     var id = req.params.id
