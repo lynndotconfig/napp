@@ -50,6 +50,7 @@ router.post('/create', function(req, res) {
             console.log('parse error: ' + err);
         } else {
             console.log('parse files: ' + filesTmp);
+            console.log('files' + files);
             var inputFile = files.inputFile[0];
             var uploadedPath = inputFile.path;
             var dstPath = './public/images/' + inputFile.originalFilename;
