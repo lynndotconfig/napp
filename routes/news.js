@@ -79,7 +79,7 @@ router.post('/create', function(req, res) {
                 }
             });
             res.redirect('/news/'+_news.id)
-        });
+        };
     });
 });
 /* GET news detail. */
