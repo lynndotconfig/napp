@@ -45,7 +45,7 @@ router.get('/admin', function(req, res) {
 router.post('/create', function(req, res) {
     var form = new multiparty.Form({uploadDir: '.public/images/'});
     form.parse(req, function (err, fields, files) {
-        var filesTmp = JSON.stringify(files.null, 2);
+        var filesTmp = JSON.stringify(files, null, 2);
         if (err) {
             console.log('parse error: ' + err);}
         var inputFile = files.inputFile[0];
