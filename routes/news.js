@@ -50,6 +50,14 @@ router.post('/create', function(req, res) {
             console.log('parse error: ' + err);}
         var inputFile = files.inputFile[0];
         var uploadedPath = inputFile.path;
+        var dstPath = './public/images/' + inputFile.originalFilename;
+        fs.rename(uploadedPath, dstPath, function(err) {
+            if (err){
+                console.log('rename error' + err);
+            } else {
+                console.log('rename ok');
+            }
+        });
     });
     var newsObj = req.body.news
 
