@@ -55,6 +55,7 @@ router.post('/create', function(req, res) {
             var inputFile = files.answer_pic[0];
             var uploadedPath = inputFile.path;
             var dstPath = './public/images/' + inputFile.originalFilename;
+            var imagePath = '/images/' + inputFile.originalFilename;
             fs.rename(uploadedPath, dstPath, function(err) {
                 if (err){
                     console.log('rename error' + err);
@@ -69,7 +70,7 @@ router.post('/create', function(req, res) {
             _news = new News({
                         type_name:temp.type_name,
                         question:temp.question,
-                        answer_pic:dstPath,
+                        answer_pic:imagePath,
                         answer_info:temp.answer_info,
                         answer_solution:temp.answer_solution,
                     })
