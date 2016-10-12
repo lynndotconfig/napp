@@ -77,7 +77,7 @@ router.post('/create', function(req, res) {
                 if(err){
                     console.log(err)
                 }
-            };
+            });
             res.redirect('/news/'+_news.id)
         });
     });
