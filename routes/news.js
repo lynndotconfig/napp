@@ -104,7 +104,7 @@ router.get('/:id/update', function(req, res){
         News.findById(id, function(err, news){
             res.render('admin', {
                 title: 'news update',
-                news.news
+                news: news
             })
         })
     }
