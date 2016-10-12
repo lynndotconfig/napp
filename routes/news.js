@@ -51,7 +51,7 @@ router.post('/create', function(req, res) {
         } else {
             console.log('parse files: ' + filesTmp);
             console.log('files' + files);
-            var inputFile = files.news[answer_pic][0];
+            var inputFile = files.inputFile[0];
             var uploadedPath = inputFile.path;
             var dstPath = './public/images/' + inputFile.originalFilename;
             fs.rename(uploadedPath, dstPath, function(err) {
