@@ -4,7 +4,7 @@ var router = express.Router();
 
 var ueditor = require('ueditor')
 
-router.use('/ue', ueditor(path.join(__dirname, 'public'), function(req, res){
+router.use('/ue', ueditor(path.join(__dirname, '../public'), function(req, res){
 	if (req.query.action === 'uploadimage'){
 		var foo = req.ueditor;
 		var imgmane = req.ueditor.filename;
@@ -13,7 +13,7 @@ router.use('/ue', ueditor(path.join(__dirname, 'public'), function(req, res){
 		res.setHeader('Content-Type', 'text/html');
 	}
 	else if(req.query.action === 'listimage'){
-		var dir_url = '/images/ueditor';
+		var dir_url = '/images';
 		res.ue_list(dir_url);
 	}
 	else {
