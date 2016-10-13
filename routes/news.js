@@ -72,7 +72,7 @@ router.post('/create', function(req, res) {
                         question:temp.question,
                         answer_pic:imagePath,
                         answer_info:temp.answer_info,
-                        answer_solution:temp.answer_solution,
+                        answer_solution:temp.editorValue,
                     })
             _news.save(function(err,news){
                 if(err){
