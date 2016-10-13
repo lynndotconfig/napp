@@ -35,7 +35,7 @@ block content
            label.col-sm-3.control-label(for="inputTitle") 富文本输入
            .col-sm-10
              input#inputTitle.form-control(type="hidden", name="answer_solution", value="#{news.answer_solution}")
-         .script.
+         script.
           document.getElementByName('answer_solution').value= getContent();
          .form-group
            .col-sm-offset-2.col-sm-10
